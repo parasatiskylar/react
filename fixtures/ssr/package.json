@@ -19,11 +19,11 @@
     "predev": "cp -r ../../build/oss-experimental/* ./node_modules/",
     "prestart": "cp -r ../../build/oss-experimental/* ./node_modules/",
     "prebuild": "cp -r ../../build/oss-experimental/* ./node_modules/",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:client": "PORT=3001 react-scripts start",
-    "dev:server": "NODE_ENV=development node server",
-    "start": "react-scripts build && NODE_ENV=production node server",
-    "build": "react-scripts build",
+    "dev": "node init && concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "node init && PORT=3001 react-scripts start",
+    "dev:server": "node init && NODE_ENV=development node server",
+    "start": "node init && react-scripts build && NODE_ENV=production node server",
+    "build": "node init && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

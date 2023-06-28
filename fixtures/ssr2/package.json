@@ -30,12 +30,12 @@
   "scripts": {
     "predev": "cp -r ../../build/oss-experimental/* ./node_modules/",
     "prestart": "cp -r ../../build/oss-experimental/* ./node_modules/",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:bundler\"",
-    "start": "concurrently \"npm run start:server\" \"npm run start:bundler\"",
-    "dev:server": "cross-env NODE_ENV=development nodemon -- server/server.js",
-    "start:server": "cross-env NODE_ENV=production nodemon -- server/server.js",
-    "dev:bundler": "cross-env NODE_ENV=development nodemon -- scripts/build.js",
-    "start:bundler": "cross-env NODE_ENV=production nodemon -- scripts/build.js"
+    "dev": "node init && concurrently \"npm run dev:server\" \"npm run dev:bundler\"",
+    "start": "node init && concurrently \"npm run start:server\" \"npm run start:bundler\"",
+    "dev:server": "node init && cross-env NODE_ENV=development nodemon -- server/server.js",
+    "start:server": "node init && cross-env NODE_ENV=production nodemon -- server/server.js",
+    "dev:bundler": "node init && cross-env NODE_ENV=development nodemon -- scripts/build.js",
+    "start:bundler": "node init && cross-env NODE_ENV=production nodemon -- scripts/build.js"
   },
   "babel": {
     "presets": [

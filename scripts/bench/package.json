@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "runner.js",
   "scripts": {
-    "start": "node runner.js"
+    "start": "node init && node runner.js"
   },
   "dependencies": {
     "chalk": "^2.1.0",
