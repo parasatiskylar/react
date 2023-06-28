@@ -18,11 +18,11 @@
   "scripts": {
     "predev": "cp -r ../../build/oss-experimental/* ./node_modules/",
     "prestart": "cp -r ../../build/oss-experimental/* ./node_modules/",
-    "dev": "concurrently \"npm run dev:region\" \"npm run dev:global\"",
-    "dev:global": "NODE_ENV=development BUILD_PATH=dist node server/global",
-    "dev:region": "NODE_ENV=development BUILD_PATH=dist nodemon --watch src --watch dist -- --experimental-loader ./loader/region.js --conditions=react-server server/region",
-    "start": "concurrently \"npm run start:region\" \"npm run start:global\"",
-    "start:global": "NODE_ENV=production node server/global",
-    "start:region": "NODE_ENV=production node --experimental-loader ./loader/region.js --conditions=react-server server/region"
+    "dev": "node init && concurrently \"npm run dev:region\" \"npm run dev:global\"",
+    "dev:global": "node init && NODE_ENV=development BUILD_PATH=dist node server/global",
+    "dev:region": "node init && NODE_ENV=development BUILD_PATH=dist nodemon --watch src --watch dist -- --experimental-loader ./loader/region.js --conditions=react-server server/region",
+    "start": "node init && concurrently \"npm run start:region\" \"npm run start:global\"",
+    "start:global": "node init && NODE_ENV=production node server/global",
+    "start:region": "node init && NODE_ENV=production node --experimental-loader ./loader/region.js --conditions=react-server server/region"
   }
 }
