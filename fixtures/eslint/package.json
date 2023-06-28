@@ -6,7 +6,7 @@
     "eslint-plugin-react-hooks": "link:./proxy"
   },
   "scripts": {
-    "start": "./watch.sh",
+    "start": "node init && ./watch.sh",
     "lint": "eslint index.js"
   }
 }

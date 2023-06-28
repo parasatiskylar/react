@@ -108,11 +108,11 @@
     "testRegex": "/scripts/jest/dont-run-jest-directly\\.js$"
   },
   "scripts": {
-    "build": "node ./scripts/rollup/build-all-release-channels.js",
-    "build-combined": "echo 'build-combined is deprecated. yarn build instead.'",
-    "build-for-devtools": "cross-env RELEASE_CHANNEL=experimental yarn build react/index,react/jsx,react-dom/index,react-dom/unstable_testing,react-dom/test-utils,react-is,react-debug-tools,scheduler,react-test-renderer,react-refresh,react-art --type=NODE && cp -r ./build/node_modules build/oss-experimental/",
-    "build-for-devtools-dev": "yarn build-for-devtools --type=NODE_DEV",
-    "build-for-devtools-prod": "yarn build-for-devtools --type=NODE_PROD",
+    "build": "node init && node ./scripts/rollup/build-all-release-channels.js",
+    "build-combined": "node init && echo 'build-combined is deprecated. yarn build instead.'",
+    "build-for-devtools": "node init && cross-env RELEASE_CHANNEL=experimental yarn build react/index,react/jsx,react-dom/index,react-dom/unstable_testing,react-dom/test-utils,react-is,react-debug-tools,scheduler,react-test-renderer,react-refresh,react-art --type=NODE && cp -r ./build/node_modules build/oss-experimental/",
+    "build-for-devtools-dev": "node init && yarn build-for-devtools --type=NODE_DEV",
+    "build-for-devtools-prod": "node init && yarn build-for-devtools --type=NODE_PROD",
     "linc": "node ./scripts/tasks/linc.js",
     "lint": "node ./scripts/tasks/eslint.js",
     "lint-build": "node ./scripts/rollup/validate/index.js",

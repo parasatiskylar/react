@@ -20,7 +20,6 @@ chrome-user-data
 *.sublime-workspace
 .idea
 *.iml
-.vscode
 *.swp
 *.swo
 
@@ -36,3 +35,7 @@ packages/react-devtools-extensions/.tempUserDataDir
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat

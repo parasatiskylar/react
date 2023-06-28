@@ -6,7 +6,7 @@
     "javascript-brunch": "^2.0.0"
   },
   "scripts": {
-    "build": "rm -rf public && brunch build",
+    "build": "node init && rm -rf public && brunch build",
     "prebuild": "cp -r ../../../../build/oss-experimental/* ./node_modules/"
   }
 }
